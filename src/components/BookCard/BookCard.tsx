@@ -1,5 +1,4 @@
 import {
-  Box,
   Card,
   CardContent,
   CardHeader,
@@ -9,7 +8,7 @@ import {
   Theme,
   Typography
 } from "@material-ui/core";
-import { Rating } from "@material-ui/lab";
+import StarsIcon from '@material-ui/icons/Stars';
 import React from "react";
 import { Book } from "../../models/models";
 
@@ -34,8 +33,9 @@ const BookCard: React.FC<BookProps> = ({ book }) => {
         title={book.title}
         subheader={book.authors}
       />
-      <CardMedia className={classes.media} image={book.imageURL} title={book.title} />
+      <CardMedia className={classes.media} image={book.imageUrl} title={book.title} />
       <CardContent>
+        <span>{Math.round(book?.average_rating*10)/10}<StarsIcon/> ( {book.ratings_count} ) </span>
         <Typography variant="body2" color="textSecondary" component="p">
          {"Price : Rs."+ book.price}
         </Typography>
