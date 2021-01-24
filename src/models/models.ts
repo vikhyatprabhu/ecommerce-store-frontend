@@ -10,6 +10,7 @@ export type Book = {
     ratings_count : number ;
     price : number;
     imageUrl : string;
+    quantity : number;
 }
 
 
